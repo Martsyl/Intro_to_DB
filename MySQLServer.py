@@ -1,5 +1,9 @@
+#!/usr/bin/env python3
+"""
+MySQLServer.py - A script to create the alx_book_store database
+"""
+
 import mysql.connector
-from mysql.connector import Error
 
 
 def create_database():
@@ -9,7 +13,7 @@ def create_database():
     db_config = {
         'host': 'localhost',
         'user': 'root',  # Change this to your MySQL username
-        'password': 'root'   # Change this to your MySQL password
+        'password': ''   # Change this to your MySQL password
     }
     
     connection = None
@@ -34,7 +38,7 @@ def create_database():
             
             print("Database 'alx_book_store' created successfully!")
             
-    except Error as e:
+    except mysql.connector.Error as e:
         print(f"Error connecting to MySQL or creating database: {e}")
         
     finally:
